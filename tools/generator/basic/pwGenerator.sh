@@ -1,16 +1,19 @@
 #!/bin/bash
 
-
+# ==========================================
 # Password Generetaor Script
-# -------------------------------
+# ==========================================
 # Usage:
 #   ./pwGenerator.sh <Length> <hash>
-# -------------------------------
+# 
 # Example:
 #   ./pwGenerator.sh
-# --------------------------------
+# ==========================================
+
+
 
 if [[ -z "$1" ]]; then
+    echo "[WARNING] Invalid input."
     echo "Usage: $0 <PW Length>"
     exit 1 
 fi

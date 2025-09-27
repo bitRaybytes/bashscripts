@@ -1,13 +1,18 @@
 #!/bin/bash
 
-# -------------------------------------
-#   MONITORING SYSTEM SCRIPT
-# -------------------------------------
+# ==========================================
+#   SYSTEM MONITORING SCRIPT
+# ==========================================
 # Includes warning message if
-# memo utilization is above 90%
-# system Info if utilization is above 75%
-# -------------------------------------
-
+# memo utilization is above 90% and
+# system info if utilization is above 75%
+# 
+# it will also create logfiles after
+# system monitoring is done
+# 
+# you can find the log files in your
+# $HOME/Documents/SystemLogs/updateLogs
+# ==========================================
 
 # ----- CONFIGURATIONS -----
 INTERVAL=$1
@@ -56,7 +61,7 @@ while true; do
         # echo stats in compact fomat
         echo ">>> Compact Overview:"
         printf "%-8s | %-8s | %-10s | %-6s\n" "Total" "Used" "Available" "Use%"
-        printf "-----------------------------------------------\n"
+        printf '%s\n' "-----------------------------------------------"
         printf "%-8s | %-8s | %-10s | %-6s\n" "$total_mem" "$used_human" "$avail_human" "$(used_mem)%"
         echo "Total: $total_mem | Occupied: $used_human | Available: $avail_human | Usage: $used_mem"
 
@@ -79,7 +84,7 @@ while true; do
         # compact version of hard drive space
         echo ">>> Compact Overview:"
         printf "%-10s | %-6s | %-8s | %-8s | %-6s\n" "Mount" "Size" "Used" "Avail" "Use%"
-        printf "-----------------------------------------------\n"
+        printf '%s\n' "-----------------------------------------------"
 
         df -h --output=target,size,used,avail,pcent | tail -n +2 | while read mnt size used avail perc ; do
                 printf "%-10s | %-6s | %-8s | %-8s | %-6s\n" "$mnt" "$size" "$used" "$avail" "$perc"
@@ -102,7 +107,7 @@ while true; do
         # top 5 processes sort by CPU utilization
         echo "===== Top 5 Processes by CPU: ====="
         printf "%-6s | %-15s | %-6s | %-6s\n" "PID" "Process" "CPU%" "MEM%"
-        printf "---------------------------------------------"
+        printf '%s\n' "---------------------------------------------"
         ps -eo pid,comm,%cpu,%mem --sort=-%cpu | awk 'NR==1 || NR<=6 {printf "%-6s | %-15s | %-6s | %-6s\n", $1, $2, $3, $5}'
     
     } | tee -a "$LOGFILE"
