@@ -23,6 +23,6 @@ for ((i=0; i<26;i++)); do
     shift_a="$suffix$prefix"
 
     # create fist char and shift rows
-    echo "$firstChar | $(echo $shift_a | sed 's/./& &g')"
+    echo "$firstChar | $(echo $shift_a | sed 's/./& /g')"
 done
 
