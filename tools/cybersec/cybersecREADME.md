@@ -11,3 +11,8 @@ The tools in this directory are intended solely for educational purposes, defens
 Do not use these tools to scan, test, or potentially harm any system or network you do not have explicit, written authorization to operate on.
 
 Using these scripts on third-party systems without permission is illegal and unethical. By proceeding, you acknowledge these risks and agree to use these resources responsibly.
+
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](/LICENSE) file for details.
