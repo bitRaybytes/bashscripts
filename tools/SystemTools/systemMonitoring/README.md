@@ -76,11 +76,11 @@ The script performs three main functions within its continuous loop:
 
 ### 1. Memory Check
 
-It uses the `free -h` command for a full overview and calculates the percentage usage using awk. It then checks the calculated percentage against the $\text 75%$ and $\text 90%$ thresholds to print alerts.
+It uses the `free -h` command for a full overview and calculates the percentage usage using awk. It then checks the calculated percentage against the $75%$ and $90%$ thresholds to print alerts.
 
 ### 2. Disk Space Check
 
-It uses df -h to report on file system disk space. It iterates through all mounted partitions to check their usage percentage against the $\text 75%$ and $\text 90%$ thresholds, printing a `[WARNING]` if either is exceeded.
+It uses df -h to report on file system disk space. It iterates through all mounted partitions to check their usage percentage against the $75%$ and $90%$ thresholds, printing a `[WARNING]` if either is exceeded.
 
 ### 3. Top Processes
 
