@@ -28,7 +28,7 @@ for ((i=1;i<$PWLENGTH;i++)); do
     rand+=$char
 done
 
-echo "Genreated password: $rand"
+echo "Generated password: $rand"
 echo
 
 # convert password to base64
