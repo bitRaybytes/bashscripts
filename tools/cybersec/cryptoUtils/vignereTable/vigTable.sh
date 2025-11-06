@@ -17,9 +17,9 @@ printf -- '%.0s-' {1..55}
 for ((i=0; i<26;i++)); do
     # create shifted alphabet with head and tail
     # head cuts front part and tail the end
-    prefix=$(echo $alphabet | head -c $((i+)))
-    suffix=$(echo $alphabet | tail -c $((26-i)))
-    # concatenate to form the shifted row
+    prefix=$(echo $alphabet | head -c $((i++)))
+    suffix=$(echo $alphabet | tail -c $((27-i)))
+    # concatenate to form rows
     shift_a="$suffix$prefix"
 
     # create fist char and shift rows
